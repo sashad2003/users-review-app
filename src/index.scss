@@ -1,0 +1,108 @@
+@import './assets/satoshi-css/satoshi.css';
+
+$main-font: 'Satoshi', sans-serif;
+$main-text-color: white;
+$white-20: rgba(255, 255, 255, 0.2);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #041827;
+    color: $main-text-color;
+    font-family: $main-font;
+
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+    align-items: center;
+    margin: 2em auto;
+    padding: 1em;
+}
+
+.card {
+    background-color: $white-20;
+    border: 1px solid $white-20;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 1em;
+    width: 100%;
+    max-width: 640px;
+}
+
+
+.add-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    input,
+    textarea {
+        background: $white-20;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        font-family: $main-font;
+        color: white;
+        border-radius: 6px;
+
+
+        &::placeholder {
+            color: $white-20;
+        }
+    }
+    .submit-btn{
+        padding: 10px;
+        font-family: $main-font;
+        font-weight: 600;
+        border-radius: 6px;
+        border: none;
+    }
+
+    .field-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 1em;
+    }
+}
+
+.review {
+    display: flex;
+    gap: 1em;
+    position: relative;
+
+    .review-content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .review-buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        // width: 10%;
+        gap: 0.5em;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        button {
+            background: none;
+            border: none;
+
+            svg {
+                width: 20px;
+                color: white;
+            }
+        }
+    }
+}
