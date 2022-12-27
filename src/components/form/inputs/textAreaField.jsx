@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-const TextArea = () => {
-    const [content, setContent] = useState('');
-    const handleChange = (e) => {
-        setContent(e.target.value);
-    }
+const TextArea = ({ content, handleChange }) => {
+    
+    
 
     return (
         <div className='field-wrapper'>

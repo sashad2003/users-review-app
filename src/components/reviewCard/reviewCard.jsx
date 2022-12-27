@@ -3,7 +3,7 @@ import { IconTrash } from "../icons/trashIcon";
 
 const ReviewCard = ({ image, name, review, onDelete, onEdit }) => {
     return (
-        <div className="card review">
+        <div className="card review scale-up-center">
             <img src={image} alt="" />
             <div className="review-content">
                 <h2>{name}</h2>

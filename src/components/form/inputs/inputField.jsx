@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-const Input = () => {
-    const [userName, setUserName] = useState('');
-    const handleChange = (e) => {
-        setUserName(e.target.value);
-    }
+const Input = ({userName, handleChange}) => {
+    
 
     return (
         <div className='field-wrapper'>
