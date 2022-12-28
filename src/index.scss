@@ -13,8 +13,8 @@ $hover-color: lighten($main-color, 10%);
 }
 
 body {
-    background-size: cover;
     background: #041827 url("./assets/images/bg-1200.jpg") no-repeat fixed;
+    background-size: cover;
     color: $main-text-color;
     font-family: $main-font;
 

@@ -6,8 +6,8 @@
 }
 
 body {
-  background-size: cover;
   background: #041827 url("./assets/images/bg-1200.jpg") no-repeat fixed;
+  background-size: cover;
   color: white;
   font-family: "Satoshi", sans-serif;
 }
