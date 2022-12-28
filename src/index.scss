@@ -13,10 +13,8 @@ $hover-color: lighten($main-color, 10%);
 }
 
 body {
-    background-color: #041827;
-    background: url("./assets/images/bg-1200.jpg") no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background: #041827 url("./assets/images/bg-1200.jpg") no-repeat fixed;
     color: $main-text-color;
     font-family: $main-font;
 
@@ -101,6 +99,10 @@ body {
         gap: 8px;
         margin-bottom: 1em;
     }
+
+    &-edit{
+        padding: 1em;
+    }
 }
 
 .review {
@@ -183,4 +185,12 @@ body {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+}
+
+.display-false{
+    display: none !important;
+}
+
+.display-true{
+    display: flex;
 }

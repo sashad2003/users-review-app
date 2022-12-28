@@ -7,7 +7,22 @@ import useLocalStorage from './hooks/useLocalStorage';
 function App() {
 
     const [cardsData, setCardsData] = useLocalStorage('reviews', []);
-    const [lastId, setLastId] = useState(0);
+    const [lastId, setLastId] = useLocalStorage('lastId', 0);
+    const [mainFormVisible, setMainFormVisible] = useState(true);
+    const [editMode, setEditMode] = useState(false);
+
+
+    const editModeToggle = () => {
+        setEditMode(!editMode);
+    }
+
+    const hideMainForm = () => {
+        setMainFormVisible(false);
+    }
+
+    const showMainForm = () => {
+        setMainFormVisible(true);
+    }
 
     const idGenerator = () => {
         setLastId(lastId + 1);
@@ -19,9 +34,7 @@ function App() {
 
 
     const addReview = (name, review) => {
-
         if (name && review) {
-            let nextId = idGenerator();
             imgGen().then(avatarURL => {
                 idGenerator();
                 const newItem = { id: lastId, name, review, image: avatarURL };
@@ -30,7 +43,21 @@ function App() {
         } else {
             alert('All fields are required')
         }
+    }
 
+    const editReview = (name, review, id) => {
+        console.log(`Edit name: ${name} review: ${review} id: ${id} `);
+        const newState = cardsData.map(obj => {
+            if (obj.id === id) {
+                const edit = setEditMode(true);
+                return { ...obj, name, review, edit  }
+            }
+            const edit = setEditMode(false);
+            return { ...obj, edit};
+        });
+
+        editModeToggle();
+        setCardsData(newState);
     }
 
 
@@ -38,11 +65,15 @@ function App() {
         return (
             <ReviewCard
                 key={id}
+                id={id}
                 name={name}
                 review={review}
                 image={image}
                 onDelete={() => onDeleteHandler(id)}
-                onEdit={() => console.log("Edit")}
+                editReview={editReview}
+                hideMainForm={hideMainForm}
+                showMainForm={showMainForm}
+                editModeToggle={editModeToggle}
             />
         )
     })
@@ -52,8 +83,6 @@ function App() {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        // const inputName = document.querySelector("input");
-        // const inputTextArea = document.querySelector("textarea");
         addReview(userName, content);
         clearForm();
     }
@@ -76,8 +105,13 @@ function App() {
         <div className="App">
             <h1>User Reviews</h1>
             {reviewItems}
-            <AppForm onSubmitHandler={onSubmitHandler} userName={userName} content={content} handleChange={handleChange} />
-
+            <AppForm
+                mainFormVisible={mainFormVisible}
+                userName={userName}
+                content={content}
+                onSubmitHandler={onSubmitHandler}
+                handleChange={handleChange}
+            />
         </div>
     )
 }
