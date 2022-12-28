@@ -15,13 +15,13 @@ $hover-color: lighten($main-color, 10%);
 body {
     background-color: #041827;
     background: url("./assets/images/bg-1200.jpg") no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-attachment: fixed;
     color: $main-text-color;
     font-family: $main-font;
 
     // backdrop-filter: blur(2px);
-    
+
 }
 
 .App {
@@ -44,7 +44,8 @@ body {
     max-width: 640px;
     backdrop-filter: blur(6px);
     transition: 0.2s;
-    &:hover{
+
+    &:hover {
         // backdrop-filter: blur(10px);
         border-color: rgba(255, 255, 255, 0.605);
         box-shadow: #ffffff25 0 0 20px 0px;
@@ -75,7 +76,8 @@ body {
             color: $white-20;
         }
     }
-    .submit-btn{
+
+    .submit-btn {
         padding: 10px;
         font-family: $main-font;
         font-size: 1.2rem;
@@ -85,14 +87,15 @@ body {
         background: #137bca;
         color: $main-text-color;
         transition: 0.2s ease-out;
-        &:hover{
+
+        &:hover {
             transform: scale(1.03);
             background-color: $hover-color;
             cursor: pointer;
         }
     }
 
-    .field-wrapper{
+    .field-wrapper {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -101,74 +104,83 @@ body {
 }
 
 .review {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    position: relative;
-
-    .review-content {
+    .review-wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 0.5em;
-    }
+        align-items: center;
+        gap: 1em;
+        position: relative;
 
-    .review-buttons {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.5em;
-        position: absolute;
-        right: 10px;
-        top: 10px;
+        .review-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+        }
 
-        button {
-            background: none;
-            border: none;
-            transition: 0.2s ease-out;
+        .review-buttons {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.5em;
+            position: absolute;
+            right: 10px;
+            top: 10px;
 
-            svg {
-                width: 20px;
-                color: white;
+            button {
+                background: none;
+                border: none;
+                transition: 0.2s ease-out;
+
+                svg {
+                    width: 20px;
+                    color: white;
+                }
+
+                &:hover {
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
             }
-            &:hover{
-                transform: scale(1.2);
-                cursor: pointer;
-            }
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            background-color: $white-20;
+            border-radius: 50%;
+            margin: 12px;
         }
     }
 
-    img{
-        width: 100px;
-        height: 100px;
-        background-color: $white-20;
-        border-radius: 50%;
-        margin: 12px;
+    form{
+        margin: auto;
     }
 }
 
 .scale-up-center {
-	-webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
- @-webkit-keyframes scale-up-center {
+@-webkit-keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  @keyframes scale-up-center {
+}
+
+@keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-              transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
     }
+
     100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
-  }
-  
+}

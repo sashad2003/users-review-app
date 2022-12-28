@@ -89,18 +89,18 @@ body {
   margin-bottom: 1em;
 }
 
-.review {
+.review .review-wrapper {
   display: flex;
   align-items: center;
   gap: 1em;
   position: relative;
 }
-.review .review-content {
+.review .review-wrapper .review-content {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
-.review .review-buttons {
+.review .review-wrapper .review-buttons {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -109,25 +109,28 @@ body {
   right: 10px;
   top: 10px;
 }
-.review .review-buttons button {
+.review .review-wrapper .review-buttons button {
   background: none;
   border: none;
   transition: 0.2s ease-out;
 }
-.review .review-buttons button svg {
+.review .review-wrapper .review-buttons button svg {
   width: 20px;
   color: white;
 }
-.review .review-buttons button:hover {
+.review .review-wrapper .review-buttons button:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
-.review img {
+.review .review-wrapper img {
   width: 100px;
   height: 100px;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   margin: 12px;
+}
+.review form {
+  margin: auto;
 }
 
 .scale-up-center {
