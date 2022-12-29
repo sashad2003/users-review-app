@@ -42,6 +42,7 @@ function App() {
                 idGenerator();
                 const newItem = { id: lastId, name, review, image: avatarURL };
                 setCardsData([...cardsData, newItem]);
+                clearForm();
             });
         } else {
             alert('All fields are required')
@@ -88,7 +89,6 @@ function App() {
     const onSubmitHandler = (e) => {
         e.preventDefault();
         addReview(userName, content);
-        clearForm();
         console.log(openFormsCounter);
     }
 

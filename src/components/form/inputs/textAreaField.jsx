@@ -5,13 +5,13 @@ const TextArea = ({ content, handleChange }) => {
 
     return (
         <div className='field-wrapper'>
-            <label htmlFor='fComment'>Your comment</label>
+            <label htmlFor='fComment'>Your review</label>
             <textarea
                 type="text"
                 rows="4"
                 id="fComment"
                 name="fComment"
-                placeholder="Your comment"
+                placeholder="Please enter your opinion about our product"
                 value={content}
                 onChange={handleChange}
             />

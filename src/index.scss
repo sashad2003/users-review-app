@@ -31,7 +31,7 @@ body {
 
 .card {
     // background-color: $white-20;
-    background-color: rgba(0, 0, 0, 0.197);
+    background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid $white-20;
     border-radius: 10px;
     padding: 1em;
@@ -43,7 +43,7 @@ body {
 
     &:hover {
         // backdrop-filter: blur(10px);
-        border-color: rgba(255, 255, 255, 0.605);
+        border-color: rgba(255, 255, 255, 0.3);
         box-shadow: #ffffff25 0 0 20px 0px;
     }
 }
@@ -69,7 +69,8 @@ body {
 
 
         &::placeholder {
-            color: $white-20;
+            color: $main-text-color;
+            opacity: 0.4;
         }
     }
 
