@@ -144,10 +144,16 @@ body {
 
         img {
             width: 100px;
-            height: 100px;
+            height: auto;
             background-color: $white-20;
             border-radius: 50%;
             margin: 12px;
+            
+        }
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+            padding: 1em 0.5em 2em;
         }
     }
 
