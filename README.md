@@ -12,14 +12,11 @@ I'm a web designer and front-end developer.
 - You can visit my website https://sitemarket.co.il/ 
 - or old design portfolio on https://dmade.sitemarket.co.il/
 
+![Logo](https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_300,h_74/https://sitemarket.co.il/wp-content/uploads/2022/08/logo_wide_black-300x74-11.png)
+
 
 ## Demo
-
 https://sitemarket.co.il/review-app/
-
-
-
-![Logo](https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_300,h_74/https://sitemarket.co.il/wp-content/uploads/2022/08/logo_wide_black-300x74-11.png)
 
 
 ## Run Locally
