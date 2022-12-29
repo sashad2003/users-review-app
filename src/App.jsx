@@ -9,14 +9,12 @@ function App() {
     const [cardsData, setCardsData] = useLocalStorage('reviews', []);
     const [lastId, setLastId] = useLocalStorage('lastId', 0);
     const [mainFormVisible, setMainFormVisible] = useState(true);
-    const [editMode, setEditMode] = useState(false);
+    // const [editMode, setEditMode] = useState(false);
 
 
-    const editModeToggle = () => {
-        setEditMode(!editMode);
-    }
 
-    const hideMainForm = () => {
+    const hideMainForm = (id) => {
+        console.log(`id ${id}`)
         setMainFormVisible(false);
     }
 
@@ -49,14 +47,12 @@ function App() {
         console.log(`Edit name: ${name} review: ${review} id: ${id} `);
         const newState = cardsData.map(obj => {
             if (obj.id === id) {
-                const edit = setEditMode(true);
-                return { ...obj, name, review, edit  }
+                return { ...obj, name, review }
             }
-            const edit = setEditMode(false);
-            return { ...obj, edit};
+
+            return obj;
         });
 
-        editModeToggle();
         setCardsData(newState);
     }
 
@@ -73,7 +69,6 @@ function App() {
                 editReview={editReview}
                 hideMainForm={hideMainForm}
                 showMainForm={showMainForm}
-                editModeToggle={editModeToggle}
             />
         )
     })
