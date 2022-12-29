@@ -8,19 +8,24 @@ function App() {
 
     const [cardsData, setCardsData] = useLocalStorage('reviews', []);
     const [lastId, setLastId] = useLocalStorage('lastId', 0);
+    const [openFormsCounter, setOpenFormsCounter] = useState(0);
     const [mainFormVisible, setMainFormVisible] = useState(true);
-    // const [editMode, setEditMode] = useState(false);
 
 
-
-    const hideMainForm = (id) => {
-        console.log(`id ${id}`)
+    const incrementFormsCounter = () => {
+        setOpenFormsCounter(openFormsCounter => openFormsCounter + 1);
         setMainFormVisible(false);
+        console.log(openFormsCounter)
     }
 
-    const showMainForm = () => {
-        setMainFormVisible(true);
+    const decrementFormsCounter = () => {
+        setOpenFormsCounter(openFormsCounter => openFormsCounter - 1);
+        console.log(openFormsCounter)
+        if (openFormsCounter === 1){
+            setMainFormVisible(true);
+        }
     }
+
 
     const idGenerator = () => {
         setLastId(lastId + 1);
@@ -44,7 +49,7 @@ function App() {
     }
 
     const editReview = (name, review, id) => {
-        console.log(`Edit name: ${name} review: ${review} id: ${id} `);
+        // console.log(`Edit name: ${name} review: ${review} id: ${id} `);
         const newState = cardsData.map(obj => {
             if (obj.id === id) {
                 return { ...obj, name, review }
@@ -67,8 +72,12 @@ function App() {
                 image={image}
                 onDelete={() => onDeleteHandler(id)}
                 editReview={editReview}
-                hideMainForm={hideMainForm}
-                showMainForm={showMainForm}
+                increment={() => incrementFormsCounter()}
+                decrement={() => decrementFormsCounter()}
+            // hideMainForm={hideMainForm}
+            // showMainForm={showMainForm}
+            // formsCounter={openFormsCounter}
+            // setOpenFormsCounter={setOpenFormsCounter}
             />
         )
     })
@@ -80,6 +89,7 @@ function App() {
         e.preventDefault();
         addReview(userName, content);
         clearForm();
+        console.log(openFormsCounter);
     }
 
     const handleChange = (e) => {

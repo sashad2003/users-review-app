@@ -3,18 +3,17 @@ import { IconEdit } from "../icons/editIcon";
 import { IconTrash } from "../icons/trashIcon";
 import EditForm from "../form/editForm.jsx";
 
-const ReviewCard = ({ id, image, name, review, onDelete, editReview, hideMainForm, showMainForm }) => {
+const ReviewCard = ({ id, image, name, review, onDelete, editReview, increment, decrement }) => {
 
     const [showEditForm, setShowEditForm] = useState(false);
     const onShowEdit = (e) => {
-
         setShowEditForm(true);
-        hideMainForm(id);
+        increment();
     }
 
     const onEdited = () => {
         setShowEditForm(false);
-        showMainForm();
+        decrement();
     }
 
 
